@@ -8,5 +8,31 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Speed Tier Calculator</h1>
+    <div class="container">
+        <h1>Speed Tier Calc</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Base Stats</th>
+                    <th scope="col">Abilities</th>
+                    <th scope="col">Types</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in pokemon %}
+                    <tr>
+                        <th scope="row">{{ p.id }}</th>
+                        <td>{{ p.name }}</td>
+                        <td><img src="{{ p.image }}" class="img-fluid img-thumbanil"></td>
+                        <td>{{ p.base_stats }}</td>
+                        <td>{{ p.abilities }}</td>
+                        <td>{{ p.types }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

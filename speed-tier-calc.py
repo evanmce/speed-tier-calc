@@ -26,12 +26,15 @@ def initdb_command():
             base_stats = p['base_stats']
             abilities = p['abilities']
             types = p['types']
-            level_up_moves = None
+            level_up_moves = p['level_up_moves']
             egg_moves = p['egg_moves']
             tms = p['tms']
             trs = p['trs']
             mon = Pokemon(id_no, name, stage, galar_dex, base_stats, abilities,
                           types, level_up_moves, egg_moves, tms, trs)
+            if id_no < 100:
+                id_no = "0{}".format(id_no)
+            mon.set_image_url('https://www.serebii.net/pokedex-swsh/icon/{}.png'.format(id_no))
             pkmn.append(mon)
 
     for p in pkmn:
