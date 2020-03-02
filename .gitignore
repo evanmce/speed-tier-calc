@@ -1,3 +1,5 @@
 venv
 __pycache__
 .vscode
+.flaskenv
+data-dev.sqlite
