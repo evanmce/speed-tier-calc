@@ -5,5 +5,5 @@ from ..models import Pokemon
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
-    pokemon = Pokemon.query.all()
+    pokemon = Pokemon.query.order_by(Pokemon.galar_dex).all()
     return render_template('index.html', pokemon=pokemon)

@@ -24,7 +24,7 @@ def initdb_command():
             stage = p['stage']
             galar_dex = p['galar_dex']
             base_stats = p['base_stats']
-            abilities = p['abilities']
+            abilities = list(set(p['abilities']))
             types = p['types']
             level_up_moves = p['level_up_moves']
             egg_moves = p['egg_moves']
